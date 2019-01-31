@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-# Do this: "chmod +x particle_dfu.py"
-# Then add the directory into $PATH
-
 import subprocess
 import sys
 
@@ -14,6 +11,7 @@ def main():
     returned_value = subprocess.run(dfu_command, shell=True)
     if returned_value.returncode == 0:
         print("Particle board at " + modem_port + " has been put in DFU mode.")
+
 
 def get_modem_port():
     returned_value = subprocess.run("ls /dev/cu.usb*", stdout=subprocess.PIPE, shell=True)
